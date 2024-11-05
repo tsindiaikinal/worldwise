@@ -1,0 +1,25 @@
+.menu {
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.menuLink {
+  text-decoration: none;
+}
+
+.pending {
+  background-color: #0c4b6a;
+  color: #fff;
+}
+
+.active {
+  display: inline-block;
+  padding: 10px 15px;
+  border: 2px solid #2b4c18;
+  border-radius: 10px;
+  background-color: #21793b;
+  color: #fff;
+  text-transform: uppercase;
+}
