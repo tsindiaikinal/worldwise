@@ -1,10 +1,18 @@
-import styles from './nav-app.module.scss';
+import { NavLink } from 'react-router-dom';
+import styles from './NavApp.module.scss';
 
 function NavApp() {
 
   return (
     <nav className={styles.nav}>
-      Navigation APP
+      <ul>
+        <li>
+          <NavLink to='cities'>cities</NavLink>
+        </li>
+        <li>
+          <NavLink to='country'>countries</NavLink>
+        </li>
+      </ul>
     </nav>
   );
 }

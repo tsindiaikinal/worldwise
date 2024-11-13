@@ -1,11 +1,29 @@
-import NavMenu from '../components/NavMenu/NavMenu';
+// Uses the same styles as Product
+import NavPanel from '../components/NavPanel/NavPanel';
+import styles from './Product/Product.module.scss';
 
-function Pricing() {
+export default function Product() {
   return (
-    <div>Pricing
-      <NavMenu />
-    </div>
+    <main className={styles.product}>
+      <NavPanel />
+      <section>
+        <div>
+          <h2>
+            Simple pricing.
+            <br />
+            Just $9/month.
+          </h2>
+          <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vitae vel
+            labore mollitia iusto. Recusandae quos provident, laboriosam fugit
+            voluptatem iste.
+          </p>
+        </div>
+        <img
+          src='img-2.jpg'
+          alt='overview of a large city with skyscrapers'
+        />
+      </section>
+    </main>
   );
 }
-
-export default Pricing;
