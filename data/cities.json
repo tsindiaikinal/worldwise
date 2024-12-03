@@ -1,18 +1,6 @@
 {
   "cities": [
     {
-      "cityName": "Lisbon",
-      "country": "Portugal",
-      "emoji": "🇵🇹",
-      "date": "2027-10-31T15:59:59.138Z",
-      "notes": "My favorite city so far!",
-      "position": {
-        "lat": 38.727881642324164,
-        "lng": -9.140900099907554
-      },
-      "id": 73930385
-    },
-    {
       "cityName": "Madrid",
       "country": "Spain",
       "emoji": "🇪🇸",
@@ -22,19 +10,67 @@
         "lat": 40.46635901755316,
         "lng": -3.7133789062500004
       },
-      "id": 17806751
+      "id": "17806751"
     },
     {
-      "cityName": "Berlin",
+      "id": "f04e",
+      "country": "Spain",
+      "emoji": "🇪🇸",
+      "cityName": "Fornoles",
+      "date": "2024-11-25T16:04:57.683Z",
+      "notes": "Testing add city",
+      "position": {
+        "lat": 40.92181441237853,
+        "lng": 0.016479492187500003
+      }
+    },
+    {
+      "id": "aed6",
+      "country": "Ukraine",
+      "emoji": "🇺🇦",
+      "cityName": "Mariupol",
+      "date": "2024-11-25T16:07:17.524Z",
+      "notes": "Testing add new city",
+      "position": {
+        "lat": 47.133687832776076,
+        "lng": 37.57049560546876
+      }
+    },
+    {
+      "id": "6df0",
+      "country": "Spain",
+      "emoji": "🇪🇸",
+      "cityName": "Pontos",
+      "date": "2024-11-25T16:08:03.760Z",
+      "notes": "sss",
+      "position": {
+        "lat": 42.16645713841854,
+        "lng": 2.910003662109375
+      }
+    },
+    {
+      "id": "cac2",
       "country": "Germany",
       "emoji": "🇩🇪",
-      "date": "2027-02-12T09:24:11.863Z",
-      "notes": "Amazing 😃",
+      "cityName": "Wachstedt",
+      "date": "2024-11-25T16:18:45.053Z",
+      "notes": "Added a new city",
       "position": {
-        "lat": 52.53586782505711,
-        "lng": 13.376933665713324
-      },
-      "id": 98443197
+        "lat": 51.26191485308451,
+        "lng": 10.239257812500002
+      }
+    },
+    {
+      "id": "3968",
+      "country": "Spain",
+      "emoji": "🇪🇸",
+      "cityName": "Castillo de Villamalefa",
+      "date": "2024-11-26T03:42:53.028Z",
+      "notes": "",
+      "position": {
+        "lat": 40.12228909512226,
+        "lng": -0.3433656692504883
+      }
     }
   ]
 }

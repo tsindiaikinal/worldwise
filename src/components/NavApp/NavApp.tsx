@@ -10,7 +10,7 @@ function NavApp() {
           <NavLink to='cities'>cities</NavLink>
         </li>
         <li>
-          <NavLink to='country'>countries</NavLink>
+          <NavLink to='countries'>countries</NavLink>
         </li>
       </ul>
     </nav>

@@ -1,16 +1,13 @@
 import { Outlet } from 'react-router-dom';
-import { ICity } from '../../interfaces/city.interface';
+
+import { useCities } from '../../context/cities/CitiesProvider';
 import CityItem from '../CityItem/CityItem';
 import Spinner from '../Spinner/Spinner';
-import styles from './CityList.module.scss';
 import Message from '../Message/Message';
+import styles from './CityList.module.scss';
 
-interface IProps {
-  cities: ICity[]
-  isLoading: boolean
-}
-
-function CityList({ cities, isLoading }: IProps) {
+function CityList() {
+  const { cities, isLoading } = useCities();
 
   if (isLoading) {return <Spinner />;}
 

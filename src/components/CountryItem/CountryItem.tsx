@@ -1,10 +1,8 @@
+import { ICountry } from '../../interfaces/country.interface';
 import styles from './CountryItem.module.scss';
 
 interface IProps {
-  country?: {
-    emoji: string
-    country: string
-  }
+  country?: ICountry
 }
 
 function CountryItem({ country }: IProps) {

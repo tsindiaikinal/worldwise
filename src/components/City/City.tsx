@@ -1,26 +1,27 @@
+import { useNavigate, useParams } from 'react-router-dom';
 import { formatDate } from '../../helpers/formatDate';
-import { ICity } from '../../interfaces/city.interface';
 import Spinner from '../Spinner/Spinner';
 import styles from './City.module.scss';
+import { useCities } from '../../context/cities/CitiesProvider';
+import Button from '../ui/Button';
+import { useEffect } from 'react';
 
-interface IProps {
-  city: ICity
-  isLoading: boolean
-}
+function City() {
+  const { id } = useParams();
+  const { currentCity, isLoading, getCity } = useCities();
+  const navigate = useNavigate();
 
-function City({ city, isLoading }: IProps) {
+  useEffect(() => {
+    if (!id) {
+      return;
+    }
+
+    getCity(id);
+  }, [id]);
+
+  const { cityName, emoji, date, notes } = currentCity;
+
   if (isLoading) {return <Spinner />;}
-
-  // TEMP DATA
-  /*   const currentCity = {
-    cityName: 'Lisbon',
-    emoji: '🇵🇹',
-    date: '2027-10-31T15:59:59.138Z',
-    notes: 'My favorite city so far!',
-  }; */
-
-  // const { cityName, emoji, date, notes } = currentCity;
-  const { cityName, emoji, date, notes } = city;
 
   return (
     <div className={styles.city}>
@@ -33,7 +34,7 @@ function City({ city, isLoading }: IProps) {
 
       <div className={styles.row}>
         <h6>You went to {cityName} on</h6>
-        <p>{formatDate(date || '')}</p>
+        <p>{formatDate(date || Date.now())}</p>
       </div>
 
       {notes && (
@@ -55,7 +56,12 @@ function City({ city, isLoading }: IProps) {
       </div>
 
       <div>
-        {/* <ButtonBack /> */}
+        <Button
+          type='back'
+          onClick={() => navigate(-1)}
+        >
+          Back
+        </Button>
       </div>
     </div>
   );
