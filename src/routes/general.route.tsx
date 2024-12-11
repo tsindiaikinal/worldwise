@@ -11,7 +11,7 @@ import City from '../components/City/City.tsx';
 import CountryItem from '../components/CountryItem/CountryItem.tsx';
 import Form from '../components/Form/Form.tsx';
 import Root from '../Root.tsx';
-import { getCity } from '../services/apiFetcher.service.ts';
+import { apiFetcher } from '../services/apiFetcher.service.ts';
 import { BASE_URL } from '../constants/api.constant.ts';
 
 export const router = createBrowserRouter(
@@ -41,7 +41,7 @@ export const router = createBrowserRouter(
         {
           path: 'city',
           element: <City />,
-          loader: async () => await getCity(`${BASE_URL}/cities`),
+          loader: async () => await apiFetcher(`${BASE_URL}/cities`),
         },
         {
           path: 'country',

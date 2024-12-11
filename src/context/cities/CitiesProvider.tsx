@@ -1,4 +1,4 @@
-import { ReactNode, useContext, useEffect, useReducer } from 'react';
+import { ReactNode, useCallback, useContext, useEffect, useReducer } from 'react';
 import { BASE_URL } from '../../constants/api.constant';
 import { ICity } from '../../interfaces/city.interface';
 import { apiFetcher } from '../../services/apiFetcher.service';
@@ -30,18 +30,20 @@ function CitiesProvider ({ children }: IProps) {
     getCities();
   }, []);
 
-  async function getCity(id: string | number): Promise<void> {
-    dispatch({ type: 'loading' });
-    try {
-      const data = await apiFetcher(`${BASE_URL}/cities/${id}`);
-      dispatch({ type: 'city/loaded', payload: data });
+  const getCity = useCallback(
+    async function getCity(id: string | number): Promise<void> {
+      dispatch({ type: 'loading' });
+      try {
+        const data = await apiFetcher(`${BASE_URL}/cities/${id}`);
+        dispatch({ type: 'city/loaded', payload: data });
 
-    } catch (data) {
-      dispatch({ type: 'rejected', payload: data });
-      // eslint-disable-next-line no-console
-      console.error(data);
+      } catch (data) {
+        dispatch({ type: 'rejected', payload: data });
+        // eslint-disable-next-line no-console
+        console.error(data);
+      }
     }
-  }
+    , []);
 
   async function postNewCity(newCity: ICity) {
     dispatch({ type: 'loading' });
